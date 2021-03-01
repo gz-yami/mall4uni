@@ -20,6 +20,7 @@ vue后台：https://github.com/gz-yami/mall4v
 
 小程序：https://github.com/gz-yami/mall4m
 
+uni-appH5：https://gitee.com/gz-yami/mall4uni
 
 
 ## 演示地址
