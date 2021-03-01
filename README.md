@@ -1,6 +1,9 @@
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0711/174845_6db7724e_5094767.png "在这里输入图片标题")
+
+
+
+
 一个基于springboot的开源商城 uniapp端
-
-
 
 
 该项目仅供学习参考、可供个人学习使用、如需商用联系作者进行授权，否则必将追究法律责任
@@ -9,9 +12,11 @@
 
 ## 前言
 
-uni-app 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/QQ/钉钉/淘宝）、快应用等多个平台。
 
-mall4j商城开源以来引起了广泛关注，为了感谢各位开发者对我们的支持，我们今天决定把uniapp的基础版开源出来供各位学习，让我们共同进步，共同成长~
+uni-app 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/QQ/钉钉/淘宝）、快应用等多个平台。
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0301/140954_a32581f8_5094767.png "屏幕截图.png")
+
+mall4j商城开源以来引起了广泛关注，为了感谢各位开发者对我们的支持，我们今天决定把mall4j商城的前端uniapp的基础版开源出来供各位学习，让我们共同进步，共同成长~
 
 ## 开发环境启动
 
@@ -50,3 +55,4 @@ uniapp端：https://gitee.com/gz-yami/mall4uni
 ![小程序截图](https://images.gitee.com/uploads/images/2019/0706/085234_4eb7509b_5094767.jpeg "小程序截图")
 
 
+更多内容请查看 主项目 [https://github.com/gz-yami/mall4j](https://github.com/gz-yami/mall4j)
