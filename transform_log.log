@@ -1,0 +1,96 @@
+
+Warning： 找不到package.json文件(不影响转换，无视这条)
+
+miniprogram to uni-app 转换日志
+
+---基本信息---
+时间: 2021-02-21 09:56:42
+语言: Javascript
+转换模式: Hbuilder X
+是否转换wxs文件: false
+
+---小程序基本信息---
+name: 亚米科技mall4j
+version: 
+description: 
+appid: wx6fa71e69231a4fa4
+projectname: 
+compileType: miniprogram
+author: 
+
+---目录信息---
+sourceFolder: D:\kaiyuanxiangmu\github\mall4muni
+targetFolder: D:\kaiyuanxiangmu\github\mall4muni_uni
+outputFolder: D:\kaiyuanxiangmu\github\mall4muni_uni
+miniprogramRoot: D:\kaiyuanxiangmu\github\mall4muni
+
+---日志信息---
+Convert wxs file ..\mall4muni_uni\wxs\number.wxs success!
+Convert wxs file ..\mall4muni_uni\vant\wxs\array.wxs success!
+Convert wxs file ..\mall4muni_uni\vant\wxs\bem.wxs success!
+Convert wxs file ..\mall4muni_uni\vant\wxs\object.wxs success!
+Convert wxs file ..\mall4muni_uni\vant\wxs\memoize.wxs success!
+Convert wxs file ..\mall4muni_uni\vant\wxs\utils.wxs success!
+Convert App.vue success!
+Convert component utils\big.min.js success!
+Convert component utils\config.js success!
+Convert component utils\http.js success!
+Convert component utils\util.js success!
+Convert components\coupon\coupon.vue success!
+Convert components\production\production.vue success!
+Convert pages\basket\basket.vue success!
+Convert pages\binding-phone\binding-phone.vue success!
+Convert pages\category\category.vue success!
+Convert pages\delivery-address\delivery-address.vue success!
+Convert pages\express-delivery\express-delivery.vue success!
+Convert pages\editAddress\editAddress.vue success!
+Convert pages\index\index.vue success!
+Convert pages\login\login.vue success!
+Convert pages\orderList\orderList.vue success!
+Convert pages\logs\logs.vue success!
+Convert pages\news-detail\news-detail.vue success!
+Convert pages\order-detail\order-detail.vue success!
+Convert pages\pay-result\pay-result.vue success!
+Convert pages\prod\prod.vue success!
+Convert pages\prod-classify\prod-classify.vue success!
+Convert pages\recent-news\recent-news.vue success!
+Convert pages\search-page\search-page.vue success!
+Convert pages\search-prod-show\search-prod-show.vue success!
+Convert pages\submit-order\submit-order.vue success!
+Convert pages\user\user.vue success!
+Convert component vant\common\color.js success!
+Convert component vant\common\utils.js success!
+Convert component vant\common\component.js success!
+Convert vant\icon\index.vue success!
+Convert component vant\mixins\basic.js success!
+Convert component vant\mixins\button.js success!
+Convert component vant\mixins\link.js success!
+Convert component vant\mixins\open-type.js success!
+Convert component vant\mixins\safe-area.js success!
+Convert component vant\mixins\touch.js success!
+Convert component vant\mixins\transition.js success!
+Convert vant\info\index.vue success!
+Convert vant\rate\index.vue success!
+Convert component vant\mixins\observer\behavior.js success!
+Convert component vant\mixins\observer\index.js success!
+Convert component vant\mixins\observer\props.js success!
+Convert vant\common\index.css.wxss success!
+Convert vant\common\style\clearfix.css.wxss success!
+Convert vant\common\style\ellipsis.css.wxss success!
+Convert vant\common\style\hairline.css.wxss success!
+
+转换完成: 
+耗时：5173ms
+当前转换模式：【Hbuilder X】，生成HbuilderX项目。
+优点：上手快，项目结构较简单；
+缺点：资源路径会因为表达式而无法全部被修复(“可能”需手动修复)
+
+注意：
+1.当看到"image漏网之鱼"，意味着您"可能"，“可能”，记住是“可能”，但不一定需要手动调整对应代码(以实际编译运行为准)，当image标签的src属性是含变量或表达式，工具还无法做到100%转换，需要手动修改为相对/static目录的路径
+
+
+日志说明：
+1. image漏网之鱼 --> 为HbuilderX模式时，需要将资源移动到static，并且修复相应文件路径，有可能src为网络文件，有可能为变量或表达式，可能会导致转换后文件找不到，因此提示一下
+修复提示：编译时，如有报错就将对应位置修复即可(虽然目前uni-app有类似的支持，似乎并不完善)
+
+2. 命名替换 --> 小程序里对于属性名基本没什么限制，如id能做属性名，data下面的变量和函数名还能重名，但这些在uni-app里是不支持的，因此做了相关替换，并记录日志，也许组件在外部调用时，函数名被改而因此报错时，请查看答疑文档
