@@ -29,11 +29,11 @@ mall4j商城开源以来引起了广泛关注，为了感谢各位开发者对�
 
 ## 项目链接
 
-java后台：https://github.com/gz-yami/mall4j
+java后台：https://gitee.com/gz-yami/mall4j
 
-vue后台：https://github.com/gz-yami/mall4v
+vue后台：https://gitee.com/gz-yami/mall4v
 
-原生微信小程序：https://github.com/gz-yami/mall4m
+原生微信小程序：https://gitee.com/gz-yami/mall4m
 
 uniapp端：https://gitee.com/gz-yami/mall4uni
 
@@ -55,4 +55,4 @@ uniapp端：https://gitee.com/gz-yami/mall4uni
 ![小程序截图](https://images.gitee.com/uploads/images/2019/0706/085234_4eb7509b_5094767.jpeg "小程序截图")
 
 
-更多内容请查看 主项目 [https://github.com/gz-yami/mall4j](https://github.com/gz-yami/mall4j)
+更多内容请查看 主项目 [https://gitee.com/gz-yami/mall4j](https://gitee.com/gz-yami/mall4j)
