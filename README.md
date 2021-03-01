@@ -41,6 +41,26 @@ vue后台：https://gitee.com/gz-yami/mall4v
 uniapp端：https://gitee.com/gz-yami/mall4uni
 
 
+## uni-app相关截图
+
+![un-app总截图](https://gitee.com/gz-yami/mall4uni/raw/master/static/screenshot/uniappInfo.png)
+
+![un-app首页截图](https://gitee.com/gz-yami/mall4uni/raw/master/static/screenshot/uniappIndex.png)
+
+![un-app购物车截图](https://gitee.com/gz-yami/mall4uni/raw/master/static/screenshot/uniappCart.png)
+
+![un-app个人中心截图](https://gitee.com/gz-yami/mall4uni/raw/master/static/screenshot/uniappMy.png)
+
+![un-app商品sku截图](https://gitee.com/gz-yami/mall4uni/raw/master/static/screenshot/uniappSku.png)
+
+
+
+## 小程序相关截图
+
+![小程序截图](https://images.gitee.com/uploads/images/2019/0706/085234_4eb7509b_5094767.jpeg "小程序截图")
+
+
+
 ## 演示地址
 
 后台：<http://mall4j-admin.gz-yami.com>  账号：admin/123456
@@ -51,11 +71,6 @@ uniapp端：https://gitee.com/gz-yami/mall4uni
 
 ​		2. 搜索小程序 **亚米商城** 
 
-
-
-## 相关截图
-
-![小程序截图](https://images.gitee.com/uploads/images/2019/0706/085234_4eb7509b_5094767.jpeg "小程序截图")
 
 
 更多内容请查看 主项目 [https://gitee.com/gz-yami/mall4j](https://gitee.com/gz-yami/mall4j)
