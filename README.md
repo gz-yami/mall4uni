@@ -1,4 +1,5 @@
-一个基于uni-app的轻量级、前后端分离、拥有完整sku和下单流程的完全开源商城 uni-appH5端
+一个基于springboot的开源商城 uniapp端
+
 
 
 
@@ -8,8 +9,17 @@
 
 ## 前言
 
-`亚米商城`项目致力于为中小企业打造一个完整、易于维护的开源的电商系统，采用现阶段流行技术实现。后台管理系统包含商品管理、订单管理、运费模板、规格管理、会员管理、运营管理、内容管理、统计报表、权限管理、设置等模块。
+uni-app 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到iOS、Android、Web（响应式）、以及各种小程序（微信/支付宝/百度/头条/QQ/钉钉/淘宝）、快应用等多个平台。
 
+mall4j商城开源以来引起了广泛关注，为了感谢各位开发者对我们的支持，我们今天决定把uniapp的基础版开源出来供各位学习，让我们共同进步，共同成长~
+
+## 开发环境启动
+
+请使用 uniapp官方推荐的开发工具 HBuilderX 导入项目进行开发
+
+编辑 utils/config.js 里的接口域名配置
+
+点击工具栏的运行 -> 运行到内置浏览器 即可开发调试~
 
 
 ## 项目链接
@@ -18,9 +28,9 @@ java后台：https://github.com/gz-yami/mall4j
 
 vue后台：https://github.com/gz-yami/mall4v
 
-小程序：https://github.com/gz-yami/mall4m
+原生微信小程序：https://github.com/gz-yami/mall4m
 
-uni-appH5：https://gitee.com/gz-yami/mall4uni
+uniapp端：https://gitee.com/gz-yami/mall4uni
 
 
 ## 演示地址
@@ -40,15 +50,3 @@ uni-appH5：https://gitee.com/gz-yami/mall4uni
 ![小程序截图](https://images.gitee.com/uploads/images/2019/0706/085234_4eb7509b_5094767.jpeg "小程序截图")
 
 
-
-## 提交反馈
-
-提问之前，请先阅读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)：
-
-- QQ群：722835385
-
-  ![QQ群](https://gitee.com/gz-yami/mall4j/raw/master/screenshot/qqGroup.png)
-
-- 论坛：<http://bbs.gz-yami.com>
-
-- 商务邮箱：yamitech@163.com
