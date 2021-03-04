@@ -46,12 +46,14 @@ page {
 .personal .addr {
   font-size: 26rpx;
   margin: 10rpx 0;
+  margin-top: 20rpx;
 }
 
 .personal .addr .addr-get {
   display: inline-block;
   color: #999;
-  width: 85%;
+  width: 100%;
+  word-break: break-word;
 }
 
 .address .select-btn {
