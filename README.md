@@ -69,7 +69,7 @@ uniapp端：https://gitee.com/gz-yami/mall4uni
 
 ![小程序](https://gitee.com/gz-yami/mall4j/raw/master/screenshot/miniQrcode.jpg)
 
-​		2. 搜索小程序 **亚米商城** 
+​		2. 搜索小程序 **mall4j商城** 
 
 
 
