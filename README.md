@@ -63,7 +63,7 @@ uniapp端：https://gitee.com/gz-yami/mall4uni
 
 ## 演示地址
 
-后台：<http://mall4j-admin.gz-yami.com>  账号：admin/123456
+后台：<http://mall4j-admin.mall4j.com>  账号：admin/123456
 
 小程序：1. 扫描二维码
 
