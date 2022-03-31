@@ -33,6 +33,7 @@
 <script>
 	var http = require("../../utils/http");
 	var util = require('../../utils/util.js');
+	import { encrypt } from '../../utils/crypto.js'
 	import {
 		AppType
 	} from '../../utils/constant.js'
@@ -138,7 +139,7 @@
 				// 	credentials: this.credentials,
 				// 	loginType: 0, //账号登录
 				// }
-				// // #endif				
+				// // #endif
 
 				if (this.principal.length == 0) {
 					this.setData({
@@ -156,30 +157,24 @@
 					})
 					// #ifdef H5 || APP-PLUS
 					var params = {
-						url: "/webLogin",
+						url: "/login",
 						method: "post",
 						data: {
-							"principal": this.principal,
-							"credentials": this.credentials
+							"userName": this.principal,
+							"passWord": encrypt(this.credentials)
 						},
 						callBack: res => {
-							console.log("login",res)
-							// var loginResult = '';
-							// uni.setStorageSync("loginResult",res);
-							// uni.setStorageSync('token', 'bearer' + res.access_token);
-							// return
 							http.loginSuccess(res, () => {
 								uni.showToast({
 									title: "登录成功",
 									icon: 'none',
 									complete: () => {
-										// this.$Router.pushTab('/pages/index/index')
 										setTimeout(() => {
 											wx.switchTab({
 											url: '/pages/index/index'
 										});
 										},1000)
-										
+
 									}
 								})
 							})
@@ -188,25 +183,25 @@
 					http.request(params)
 					// #endif
 					// #ifdef MP-WEIXIN
-					wx.login({
-						success: (res) => {
-							var params = {
-								url: "/login",
-								method: "post",
-								data: {
-									appType: 1,
-									credentials: this.credentials,
-									loginType: 0,
-									principal: this.principal + ':' + res.code
-								},
-								callBack: result => {
-									http.loginSuccess(result)
-									this.$Router.pushTab('/pages/index/index')
-								},
-							}
-							http.request(params)
-						},
-					})
+					// wx.login({
+					// 	success: (res) => {
+					// 		var params = {
+					// 			url: "/login",
+					// 			method: "post",
+					// 			data: {
+					// 				appType: 1,
+					// 				credentials: this.credentials,
+					// 				loginType: 0,
+					// 				principal: this.principal + ':' + res.code
+					// 			},
+					// 			callBack: result => {
+					// 				http.loginSuccess(result)
+					// 				this.$Router.pushTab('/pages/index/index')
+					// 			},
+					// 		}
+					// 		http.request(params)
+					// 	},
+					// })
 					// #endif
 				}
 			},

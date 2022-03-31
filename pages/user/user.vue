@@ -20,7 +20,7 @@
 			<view class="userinfo-con">
 				<view class="userinfo-avatar">
 					<!-- <open-data type="userAvatarUrl"></open-data> -->
-					<image :src="loginResult.pic?loginResult.pic:'../../static/images/icon/head04.png'"></image>
+					<image :src="loginResult.pic ? (loginResult.pic.indexOf('http') === -1 ? picDomain + loginResult.pic : loginResult.pic) : '../../static/images/icon/head04.png'"></image>
 				</view>
 				<view class="userinfo-name">
 					<view>{{loginResult.nickName ? loginResult.nickName : "用户昵称"}}</view>
@@ -139,6 +139,7 @@
 	// pages/user/user.js
 	var http = require("../../utils/http.js");
 	var util = require("../../utils/util.js");
+	var config = require("../../utils/config.js");
 
 	export default {
 		data() {
@@ -148,6 +149,7 @@
 				collectionCount: 0,
 				isAuthInfo: false,
 				loginResult: '',
+				picDomain: config.picDomain
 			};
 		},
 
@@ -170,7 +172,7 @@
 		onShow: function() {
 			//加载订单数字
 			var ths = this; // var status = ths.data.status
-
+			console.log(uni.getStorageSync("loginResult"))
 			ths.setData({
 				loginResult: uni.getStorageSync("loginResult"),
 				// isAuthInfo: Boolean(wx.getStorageSync('loginResult').userId),
@@ -321,8 +323,8 @@
 			logout: function() {
 				// 请求退出登陆接口
 				http.request({
-					url: '/p/user/logout',
-					method: 'GET',
+					url: '/logOut',
+					method: 'post',
 					callBack: res => {
 						util.removeTabBadge()
 
