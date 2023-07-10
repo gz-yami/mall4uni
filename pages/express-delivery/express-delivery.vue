@@ -17,7 +17,7 @@
         </view>
       </view>
     </view>
-    <view class="deliveryDetail">
+    <view class="deliveryDetail" v-if="dvyData.length">
       <block v-for="(item, index) in dvyData" :key="index">
         
         <view :class="'detailItem ' + (index==0?'lastest':'')">
@@ -32,6 +32,9 @@
         </view>
       </block>
     </view>
+	<view class="empty-space" v-else>
+			暂无配送信息
+	</view>
   </view>
 </view>
 </template>
