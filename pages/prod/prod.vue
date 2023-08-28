@@ -151,14 +151,23 @@
       </view>
       <view class="pup-sku-body">
         <view class="pup-sku-area">
-          <block v-for="(value, key) in skuGroup" :key="key">
-            <view class="sku-kind">{{key}}</view>
-            <view class="sku-choose">
-              <block v-for="(item, index) in value" :key="index">
-                <text :class="'sku-choose-item ' + (wxs.array_contain(selectedProp,item)?'active':'') + ' ' + (wxs.props_contain(allProperties,selectedPropObj,key,item,propKeys)?'':'gray')" :data-ok="wxs.props_contain(allProperties,selectedPropObj,key,item,propKeys)" @tap="toChooseItem" :data-key="key" :data-val="item">{{item}}</text>
-              </block>
-            </view>
+          <view class="sku-box" v-if="skuList.length">
+			<block v-for="(skuGroupItem, skuGroupItemIndex) in skuGroupList" :key="skuGroupItemIndex">
+				<view class="items sku-text" v-for="(skuLine, key) in skuGroupItem" :key="key">
+					<text class="sku-kind">{{key}}</text>
+					<view class="con">
+						<text
+							v-for="skuLineItem in skuLine"
+							:key="skuLineItem"
+							class="sku-choose-item"
+							:class="[selectedPropList.indexOf(key + ':' + skuLineItem) !== -1?'active':'',
+								isSkuLineItemNotOptional(allProperties,selectedPropObj,key,skuLineItem,propKeys)? 'dashed' : '']"
+							@click="toChooseItem(skuGroupItemIndex, skuLineItem, key)"
+						>{{skuLineItem}}</text>
+					</view>
+				</view>
           </block>
+		  </view>
         </view>
         <view class="pup-sku-count">
           <view class="num-wrap">
@@ -282,7 +291,9 @@ export default {
       },
       littleCommPage: [],
       evaluate: -1,
-      isCollection: false
+      isCollection: false,
+	  findSku: true,
+	  skuGroupList: []
     };
   },
 
@@ -428,11 +439,11 @@ export default {
             // skuId: res.skuId
             skuList: res.skuList,
             pic: res.pic
-          }); // 获取优惠券
+          }); 
+		  // 获取优惠券
           //this.getCouponList();
           // 组装sku
-
-          this.groupSkuProp();
+		  this.groupSkuProp(res.skuList, res.price);
           uni.hideLoading();
         }
       };
@@ -534,121 +545,143 @@ export default {
       });
     },
 
-    //根据sku的属性 分组
-    groupSkuProp: function () {
-      var skuList = this.skuList;
+    /**
+	 * 组装SKU
+	 */
+	groupSkuProp(skuList, defaultPrice) {
+		if (skuList.length == 1 && !skuList[0].properties) {
+			this.defaultSku = skuList[0]
+			this.findSku = true
+			return;
+		}
+		let skuGroupList = []
+		let skuGroup = {}
+		let allProperties = []
+		let propKeys = []
+		let selectedPropObj = {}
+		let selectedPropObjList = []
 
-      if (skuList.length == 1 && skuList[0].properties == "") {
-        this.setData({
-          defaultSku: skuList[0]
-        });
-        return;
-      }
-
-      var skuGroup = {};
-      var allProperties = [];
-      var propKeys = [];
-
-      for (var i = 0; i < skuList.length; i++) {
-        var defaultSku = this.defaultSku;
-        var isDefault = false;
-
-        if (!defaultSku && skuList[i].price == this.price) {
-          //找到和商品价格一样的那个SKU，作为默认选中的SKU
-          defaultSku = skuList[i];
-          isDefault = true;
-          this.setData({
-            defaultSku: defaultSku
-          });
-        }
-
-        var properties = skuList[i].properties; //版本:公开版;颜色:金色;内存:64GB
-
-        allProperties.push(properties);
-        var propList = properties.split(";"); // ["版本:公开版","颜色:金色","内存:64GB"]
-
-        var selectedPropObj = this.selectedPropObj;
-
-        for (var j = 0; j < propList.length; j++) {
-          var propval = propList[j].split(":"); //["版本","公开版"]
-
-          var props = skuGroup[propval[0]]; //先取出 版本对应的值数组
-          //如果当前是默认选中的sku，把对应的属性值 组装到selectedProp
-
-          if (isDefault) {
-            propKeys.push(propval[0]);
-            selectedPropObj[propval[0]] = propval[1];
-          }
-
-          if (props == undefined) {
-            props = []; //假设还没有版本，新建个新的空数组
-
-            props.push(propval[1]); //把 "公开版" 放进空数组
-          } else {
-            if (!this.array_contain(props, propval[1])) {
-              //如果数组里面没有"公开版"
-              props.push(propval[1]); //把 "公开版" 放进数组
-            }
-          }
-
-          skuGroup[propval[0]] = props; //最后把数据 放回版本对应的值
-        }
-
-        this.setData({
-          selectedPropObj: selectedPropObj,
-          propKeys: propKeys
-        });
-      }
-
-      this.parseSelectedObjToVals();
-      this.setData({
-        skuGroup: skuGroup,
-        allProperties: allProperties
-      });
-    },
-    //将已选的 {key:val,key2:val2}转换成 [val,val2]
-    parseSelectedObjToVals: function () {
-      var selectedPropObj = this.selectedPropObj;
-      var selectedProperties = "";
-      var selectedProp = [];
-
-      for (var key in selectedPropObj) {
-        selectedProp.push(selectedPropObj[key]);
-        selectedProperties += key + ":" + selectedPropObj[key] + ";";
-      }
-
-      selectedProperties = selectedProperties.substring(0, selectedProperties.length - 1); // console.log(selectedProperties);
-
-      this.setData({
-        selectedProp: selectedProp
-      });
-
-      for (var i = 0; i < this.skuList.length; i++) {
-        if (this.skuList[i].properties == selectedProperties) {
-          this.setData({
-            defaultSku: this.skuList[i]
-          });
-          break;
-        }
-      }
-    },
-    //点击选择规格
-    toChooseItem: function (e) {
-      var ok = e.currentTarget.dataset.ok;
-
-      if (!ok) {
-        return;
-      }
-
-      var val = e.currentTarget.dataset.val;
-      var key = e.currentTarget.dataset.key;
-      var selectedPropObj = this.selectedPropObj;
-      selectedPropObj[key] = val;
-      this.setData({
-        selectedPropObj: selectedPropObj
-      });
-      this.parseSelectedObjToVals();
-    },
+		var defaultSku = null;
+		for (var i = 0; i < skuList.length; i++) {
+			var isDefault = false;
+			if (!defaultSku && skuList[i].price == defaultPrice) {
+				defaultSku = skuList[i];
+				isDefault = true;
+			}
+			var properties = skuList[i].properties; //版本:公开版;颜色:金色;内存:64GB
+			allProperties.push(properties);
+			var propList = properties.split(";"); // ["版本:公开版","颜色:金色","内存:64GB"]
+			for (var j = 0; j < propList.length; j++) {
+				var propval = propList[j].split(":"); //["版本","公开版"]
+				var props = skuGroup[propval[0]]; //先取出 版本对应的值数组
+				//如果当前是默认选中的sku，把对应的属性值 组装到selectedProp
+				if (isDefault) {
+					propKeys.push(propval[0]);
+					selectedPropObj[propval[0]] = propval[1];
+					const selectedPropObjItem = {}
+					selectedPropObjItem[propval[0]] = propval[1]
+					selectedPropObjList.push(selectedPropObjItem)
+				}
+				if (props == undefined) {
+					props = []; //假设还没有版本，新建个新的空数组
+					props.push(propval[1]); //把 "公开版" 放进空数组
+				} else {
+					if (props.indexOf(propval[1]) === -1) { //如果数组里面没有"公开版"
+						props.push(propval[1]); //把 "公开版" 放进数组
+					}
+				}
+				skuGroup[propval[0]] = props; //最后把数据 放回版本对应的值
+				const propListItem = {}
+				propListItem[propval[0]] = props
+				skuGroupList.push(propListItem)
+			}
+		}
+		this.defaultSku = defaultSku
+		this.propKeys = propKeys
+		this.selectedPropObj = selectedPropObj
+		this.skuGroup = skuGroup
+		this.selectedPropObjList = selectedPropObjList
+		this.skuGroupList = this.unique(skuGroupList)
+		this.allProperties = allProperties
+		this.parseSelectedObjToVals(skuList);
+		this.$forceUpdate()
+	},
+   	/**
+	 * 将已选的 {key:val,key2:val2}转换成 [val,val2]
+	 */
+	parseSelectedObjToVals: function(skuList) {
+		let selectedPropObjList = this.selectedPropObjList
+		let selectedProperties = ""
+		let selectedPropList = []
+		let selectedPropShowList = []
+		for (let i = 0; i < selectedPropObjList.length; i++) {
+			const selectedPropObjItem = selectedPropObjList[i];
+			for (const key in selectedPropObjItem) {
+				if (Object.hasOwnProperty.call(selectedPropObjItem, key)) {
+					selectedPropList.push(key + ':' + selectedPropObjItem[key])
+					selectedPropShowList.push(selectedPropObjItem[key])
+					selectedProperties += key + ":" + selectedPropObjItem[key] + ";"
+				}
+			}
+		}
+		selectedProperties = selectedProperties.substring(0, selectedProperties.length - 1)
+		this.selectedPropList = selectedPropList
+		this.selectedPropShowList = selectedPropShowList
+		this.selectedProperties = selectedProperties
+		this.selectedPropObjList = selectedPropObjList
+		var findSku = false
+		for (var i = 0; i < skuList.length; i++) {
+			if (skuList[i].properties == selectedProperties) {
+				findSku = true
+				this.defaultSku = skuList[i]
+				break
+			}
+		}
+		this.findSku = findSku
+	},
+	/**
+	 * 判断当前的规格值 是否可以选
+	 */
+	isSkuLineItemNotOptional(allProperties, selectedPropObj, key, item, propKeys) {
+		var selectedPropObj = Object.assign({}, selectedPropObj)
+		var properties = "";
+		selectedPropObj[key] = item;
+		for (var j = 0; j < propKeys.length; j++) {
+			properties += propKeys[j] + ":" + selectedPropObj[propKeys[j]] + ";";
+		}
+		properties = properties.substring(0, properties.length - 1);
+		for (var i = 0; i < allProperties.length; i++) {
+			if (properties == allProperties[i]) {
+				return false;
+			}
+		}
+		for (var i = 0; i < allProperties.length; i++) {
+			if (allProperties[i].indexOf(item) >= 0) {
+				return true;
+			}
+		}
+		return false;
+	},
+    /**
+	 * 规格点击事件
+	 */
+	toChooseItem(skuGroupItemIndex ,skuLineItem, key) {
+		this.selectedPropObjList[skuGroupItemIndex][key] = skuLineItem
+		this.selectedPropObj[key] = skuLineItem;
+		this.parseSelectedObjToVals(this.skuList);
+	},
+	/**
+	 * 去重
+	 */
+	unique(arr) {
+		const map = {}
+		arr.forEach(item => {
+			const obj = {};
+			Object.keys(item).sort().map(key => obj[key] = item[key])
+			map[JSON.stringify(obj)] = item;
+		})
+		return Object.keys(map).map(key => JSON.parse(key))
+	},
     //判断数组是否包含某对象
     array_contain: function (array, obj) {
       for (var i = 0; i < array.length; i++) {
@@ -696,7 +729,6 @@ export default {
           skuId: this.defaultSku.skuId
         },
         callBack: res => {
-          //console.log(res);
           this.setData({
             totalCartNum: this.totalCartNum + this.prodNum
           });
@@ -764,7 +796,6 @@ export default {
         data: {},
         callBack: couponIds => {
           var couponList = this.couponList;
-          console.log(couponList);
           couponList.forEach(coupon => {
             if (couponIds && couponIds.length) {
               // 领取该优惠券数量
