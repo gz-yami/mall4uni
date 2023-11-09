@@ -1,0 +1,76 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": true,
+        "navigationBarTitleText": "mall4j"
+      }
+    },
+    {
+      "path": "pages/user/user",
+      "style": {
+        "navigationBarTitleText": "个人中心"
+      }
+    },
+    {
+      "path": "pages/basket/basket",
+      "style": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "购物车",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/category/category",
+      "style": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "分类商品",
+        "navigationBarTextStyle": "black"
+      }
+    }
+  ],
+  "tabBar": {
+    "selectedColor": "#3a86b9",
+    "color": "#b8b8b8",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/images/tabbar/homepage.png",
+        "selectedIconPath": "/static/images/tabbar/homepage-sel.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "/static/images/tabbar/category.png",
+        "selectedIconPath": "/static/images/tabbar/category-sel.png"
+      },
+      {
+        "pagePath": "pages/basket/basket",
+        "text": "购物车",
+        "iconPath": "/static/images/tabbar/basket.png",
+        "selectedIconPath": "/static/images/tabbar/basket-sel.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "/static/images/tabbar/user.png",
+        "selectedIconPath": "/static/images/tabbar/user-sel.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "globalStyle": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "subPackages": []
+}
