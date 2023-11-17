@@ -33,6 +33,15 @@
         "navigationBarTitleText": "分类商品",
         "navigationBarTextStyle": "black"
       }
+    },
+    {
+      "path": "pages/sub-category/sub-category"
+    },
+    {
+      "path": "pages/accountLogin/accountLogin"
+    },
+    {
+      "path": "pages/register/register"
     }
   ],
   "tabBar": {

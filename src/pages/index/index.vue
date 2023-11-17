@@ -445,10 +445,11 @@ const getIndexImgs = () => {
     url: '/indexImgs',
     method: 'GET',
     data: {}
-  }).then(({ data }) => {
-    indexImgs.value = data
-    seq.value = data
   })
+    .then(({ data }) => {
+      indexImgs.value = data
+      seq.value = data
+    })
 }
 
 const getNoticeList = () => {
@@ -457,9 +458,10 @@ const getNoticeList = () => {
     url: '/shop/notice/topNoticeList',
     method: 'GET',
     data: {}
-  }).then(({ data }) => {
-    news.value = data
   })
+    .then(({ data }) => {
+      news.value = data
+    })
 }
 
 /**
@@ -470,14 +472,15 @@ const getTag = () => {
     url: '/prod/tag/prodTagList',
     method: 'GET',
     data: {}
-  }).then(({ data }) => {
-    taglist.value = data
-    for (let i = 0; i < data.length; i++) {
-      updata.value = false
-      updata.value = true
-      getTagProd(data[i].id, i)
-    }
   })
+    .then(({ data }) => {
+      taglist.value = data
+      for (let i = 0; i < data.length; i++) {
+        updata.value = false
+        updata.value = true
+        getTagProd(data[i].id, i)
+      }
+    })
 }
 
 const getTagProd = (id, index) => {
@@ -488,13 +491,14 @@ const getTagProd = (id, index) => {
       tagId: id,
       size: 6
     }
-  }).then(({ data }) => {
-    updata.value = false
-    updata.value = true
-    const taglistParam = taglist.value
-    taglistParam[index].prods = data.records
-    taglist.value = taglistParam
   })
+    .then(({ data }) => {
+      updata.value = false
+      updata.value = true
+      const taglistParam = taglist.value
+      taglistParam[index].prods = data.records
+      taglist.value = taglistParam
+    })
 }
 </script>
 
