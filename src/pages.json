@@ -42,6 +42,39 @@
     },
     {
       "path": "pages/register/register"
+    },
+    {
+      "path": "pages/prod/prod",
+      "style": {
+        "navigationBarTitleText": "商品详情"
+      }
+    },
+    {
+      "path": "pages/orderList/orderList",
+      "style": {
+        "backgroundTextStyle": "light",
+        "navigationBarTitleText": "订单列表",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#fafafa"
+      }
+    },
+    {
+      "path": "pages/order-detail/order-detail",
+      "style": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "订单详情",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/pay-result/pay-result",
+      "style": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "支付结果",
+        "navigationBarTextStyle": "black"
+      }
     }
   ],
   "tabBar": {
