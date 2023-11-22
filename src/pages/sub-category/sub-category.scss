@@ -19,7 +19,7 @@
   }
 }
 .prod-item {
-  margin-top: 100rpx;
+  height: calc(100vh - 100rpx);
 }
 .on {
   border-bottom: 4rpx solid #e43130;
@@ -105,5 +105,5 @@
 .empty-wrap {
   color: #aaa;
   text-align: center;
-  margin-top: 400rpx;
+  padding-top: 400rpx;
 }

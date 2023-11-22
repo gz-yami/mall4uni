@@ -22,54 +22,53 @@
       </block>
     </scroll-view>
     <!-- 商品列表 -->
-    <view
-      v-if="prodList.length"
-      class="prod-item"
-    >
-      <block
-        v-for="(prod, key) in prodList"
-        :key="key"
-      >
-        <view
-          class="prod-items"
-          :data-prodid="prod.prodId"
-          @tap="toProdPage"
+    <view class="prod-item">
+      <block v-if="prodList.length">
+        <block
+          v-for="(prod, key) in prodList"
+          :key="key"
         >
-          <view class="hot-imagecont">
-            <image
-              :src="prod.pic"
-              class="hotsaleimg"
-            />
-          </view>
-          <view class="hot-text">
-            <view class="hotprod-text">
-              {{ prod.prodName }}
+          <view
+            class="prod-items"
+            :data-prodid="prod.prodId"
+            @tap="toProdPage"
+          >
+            <view class="hot-imagecont">
+              <image
+                :src="prod.pic"
+                class="hotsaleimg"
+              />
             </view>
-            <view class="prod-info">
-              {{ prod.brief }}
-            </view>
-            <view class="prod-text-info">
-              <view class="price">
-                <text class="symbol">
-                  ￥
-                </text>
-                <text class="big-num">
-                  {{ wxs.parsePrice(prod.price)[0] }}
-                </text>
-                <text class="small-num">
-                  .{{ wxs.parsePrice(prod.price)[1] }}
-                </text>
+            <view class="hot-text">
+              <view class="hotprod-text">
+                {{ prod.prodName }}
+              </view>
+              <view class="prod-info">
+                {{ prod.brief }}
+              </view>
+              <view class="prod-text-info">
+                <view class="price">
+                  <text class="symbol">
+                    ￥
+                  </text>
+                  <text class="big-num">
+                    {{ wxs.parsePrice(prod.price)[0] }}
+                  </text>
+                  <text class="small-num">
+                    .{{ wxs.parsePrice(prod.price)[1] }}
+                  </text>
+                </view>
               </view>
             </view>
           </view>
-        </view>
+        </block>
       </block>
-    </view>
-    <view
-      v-else
-      class="empty-wrap"
-    >
-      暂无商品数据~
+      <view
+        v-else
+        class="empty-wrap"
+      >
+        暂无商品数据~
+      </view>
     </view>
   </view>
 </template>

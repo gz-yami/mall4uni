@@ -38,15 +38,31 @@
       "path": "pages/sub-category/sub-category"
     },
     {
-      "path": "pages/accountLogin/accountLogin"
-    },
-    {
-      "path": "pages/register/register"
-    },
-    {
-      "path": "pages/prod/prod",
+      "path": "pages/search-page/search-page",
       "style": {
-        "navigationBarTitleText": "商品详情"
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "搜索",
+        "navigationBarTextStyle": "black",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/delivery-address/delivery-address",
+      "style": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "收货地址",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/editAddress/editAddress",
+      "style": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "编辑收货地址",
+        "navigationBarTextStyle": "black"
       }
     },
     {
@@ -68,6 +84,24 @@
       }
     },
     {
+      "path": "pages/submit-order/submit-order",
+      "style": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "提交订单",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/express-delivery/express-delivery",
+      "style": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "物流查询",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
       "path": "pages/pay-result/pay-result",
       "style": {
         "backgroundTextStyle": "light",
@@ -75,6 +109,51 @@
         "navigationBarTitleText": "支付结果",
         "navigationBarTextStyle": "black"
       }
+    },
+    {
+      "path": "pages/search-prod-show/search-prod-show",
+      "style": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "搜索结果",
+        "navigationBarTextStyle": "black"
+      }
+    },
+    {
+      "path": "pages/prod/prod",
+      "style": {
+        "navigationBarTitleText": "商品详情"
+      }
+    },
+    {
+      "path": "pages/prod-classify/prod-classify",
+      "style": {
+        "onReachBottomDistance": 0
+      }
+    },
+    {
+      "path": "pages/recent-news/recent-news",
+      "style": {
+        "backgroundTextStyle": "light",
+        "navigationBarTitleText": "最新公告",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#fafafa"
+      }
+    },
+    {
+      "path": "pages/news-detail/news-detail",
+      "style": {
+        "backgroundTextStyle": "light",
+        "navigationBarTitleText": "最新公告",
+        "navigationBarTextStyle": "black",
+        "navigationBarBackgroundColor": "#fafafa"
+      }
+    },
+    {
+      "path": "pages/accountLogin/accountLogin"
+    },
+    {
+      "path": "pages/register/register"
     }
   ],
   "tabBar": {

@@ -1,15 +1,11 @@
 .container {
   width: 100%;
   background: #f4f4f4;
-  padding-bottom: 118rpx;
-}
-container {
-  .prod-list {
-    width: 100%;
-    background: #f8f8f8;
-  }
+  min-height: calc(100vh - 118rpx);
 }
 .prod-list {
+  padding-bottom: 118rpx;
+  width: 100%;
   .prod-block {
     background: #fff;
     margin-top: 15rpx;
@@ -267,7 +263,8 @@ container {
     }
   }
 }
-checkbox {
+:deep(checkbox) {
+  .uni-checkbox-input,
   .wx-checkbox-input {
     border-radius: 50%;
     width: 35rpx;

@@ -105,12 +105,12 @@
       class="cart-footer"
     >
       <view class="btn all">
-        <label @tap="onSelAll">
-          <checkbox
-            :checked="allChecked"
-            color="#f7d731;"
-          />
-          全选</label>
+        <checkbox
+          :checked="allChecked"
+          color="#f7d731;"
+          @tap="onSelAll"
+        />
+        全选
       </view>
       <view
         class="btn del"
@@ -221,8 +221,7 @@ const toFirmOrder = () => {
  * 全选
  */
 const onSelAll = () => {
-  let allCheckedParam = allChecked.value
-  allCheckedParam = !allCheckedParam // 改变状态
+  const allCheckedParam = !allChecked.value // 改变状态
   const shopCartItemDiscountsParam = shopCartItemDiscounts.value
   for (let i = 0; i < shopCartItemDiscountsParam.length; i++) {
     const cItems = shopCartItemDiscountsParam[i].shopCartItems

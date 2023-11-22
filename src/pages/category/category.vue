@@ -7,7 +7,7 @@
         @tap="toSearchPage"
       >
         <image
-          src="/static/images/icon/search.png"
+          src="@/static/images/icon/search.png"
           class="search-img"
         />
         <text class="sear-input">
