@@ -13,7 +13,7 @@
                 ?
                   (loginResult.pic.indexOf('http') === -1 ? picDomain + loginResult.pic : loginResult.pic)
                 :
-                  '@/static/images/icon/head04.png'
+                  '/static/images/icon/head04.png'
             "
           />
         </view>

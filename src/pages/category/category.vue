@@ -159,9 +159,9 @@ const getProdList = (categoryId) => {
  * 跳转子分类商品页面
  */
 const toCatePage = (e) => {
-  const { parentid, categoryid } = e.currentTarget.dataset
+  const { categoryid } = e.currentTarget.dataset
   uni.navigateTo({
-    url: `/pages/sub-category/sub-category?parentId=${parentid}&categoryId=${categoryid}`
+    url: `/pages/sub-category/sub-category?parentId=${parentId.value}&categoryId=${categoryid}`
   })
 }
 

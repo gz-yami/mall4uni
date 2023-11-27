@@ -643,11 +643,11 @@ const groupSkuProp = (skuList, defaultPrice) => {
     findSku.value = true
     return
   }
-  const skuGroupList = []
+  const _skuGroupList = []
   const skuGroupParam = {}
-  const allProperties = []
-  const propKeys = []
-  const selectedPropObj = {}
+  const _allProperties = []
+  const _propKeys = []
+  const _selectedPropObj = {}
   const selectedPropObjListParam = []
 
   let defaultSkuParam = null
@@ -658,15 +658,15 @@ const groupSkuProp = (skuList, defaultPrice) => {
       isDefault = true
     }
     const properties = skuList[i].properties // 版本:公开版;颜色:金色;内存:64GB
-    allProperties.push(properties)
+    _allProperties.push(properties)
     const propList = properties.split(';') // ["版本:公开版","颜色:金色","内存:64GB"]
     for (let j = 0; j < propList.length; j++) {
       const propval = propList[j].split(':') // ["版本","公开版"]
       let props = skuGroupParam[propval[0]] // 先取出 版本对应的值数组
       // 如果当前是默认选中的sku，把对应的属性值 组装到selectedProp
       if (isDefault) {
-        propKeys.push(propval[0])
-        selectedPropObj[propval[0]] = propval[1]
+        _propKeys.push(propval[0])
+        _selectedPropObj[propval[0]] = propval[1]
         const selectedPropObjItem = {}
         selectedPropObjItem[propval[0]] = propval[1]
         selectedPropObjListParam.push(selectedPropObjItem)
@@ -682,16 +682,16 @@ const groupSkuProp = (skuList, defaultPrice) => {
       skuGroupParam[propval[0]] = props // 最后把数据 放回版本对应的值
       const propListItem = {}
       propListItem[propval[0]] = props
-      skuGroupList.push(propListItem)
+      _skuGroupList.push(propListItem)
     }
   }
   defaultSku.value = defaultSkuParam
-  propKeys.value = propKeys
-  selectedPropObj.value = selectedPropObj
+  propKeys.value = _propKeys
+  selectedPropObj.value = _selectedPropObj
   skuGroup.value = skuGroupParam
   selectedPropObjList = selectedPropObjListParam
-  skuGroupList.value = unique(skuGroupList)
-  allProperties.value = allProperties
+  skuGroupList.value = unique(_skuGroupList)
+  allProperties.value = _allProperties
   parseSelectedObjToVals(skuList)
 }
 

@@ -106,7 +106,10 @@
             </text>
           </view>
           <view class="item">
-            <text class="item-tit">
+            <text
+              v-if="!!remarks"
+              class="item-tit"
+            >
               订单备注：
             </text>
             <text class="item-txt remarks">

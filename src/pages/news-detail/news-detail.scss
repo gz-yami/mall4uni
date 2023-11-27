@@ -15,13 +15,9 @@
   }
 }
 .content {
-  > {
-    > {
-      >img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-    }
+  :deep(img) {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 }

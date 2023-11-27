@@ -394,7 +394,6 @@
   font-size: 14px;
   text-align: center;
   box-shadow: 0px -1px 1px #ddd;
-  background: rgba(255, 255, 255, 0.9);
   text {
     border-radius: 20px;
     display: inline-block;
@@ -402,9 +401,6 @@
     line-height: 20px;
     width: 450rpx;
     padding: 7px;
-    background: -o-linear-gradient(right, #f45c43, #eb2444);
-    background: linear-gradient(right, #f45c43, #eb2444);
-    background: -webkit-linear-gradient(right, #f45c43, #eb2444);
     color: #fff;
     box-shadow: -1px 3px 3px #aaa;
   }

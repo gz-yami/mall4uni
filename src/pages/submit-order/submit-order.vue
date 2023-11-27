@@ -354,9 +354,9 @@ const loadOrderData = () => {
   })
     .then(({ data }) => {
       uni.hideLoading()
-      let orderItems = []
+      let orderItemsData = []
       data.shopCartOrders[0].shopCartItemDiscounts?.forEach(itemDiscount => {
-        orderItems = orderItems.value?.concat(itemDiscount.shopCartItems)
+        orderItemsData = orderItems.value?.concat(itemDiscount.shopCartItems)
       })
       if (data.shopCartOrders[0].coupons) {
         const canUseCoupons = []
@@ -374,7 +374,7 @@ const loadOrderData = () => {
           unCanUseCoupons
         }
       }
-      orderItems.value = orderItems
+      orderItems.value = orderItemsData
       actualTotal.value = data.actualTotal
       total.value = data.total
       totalCount.value = data.totalCount
