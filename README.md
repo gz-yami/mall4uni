@@ -61,23 +61,22 @@ vue后台：https://gitee.com/gz-yami/mall4v
 uniapp端：https://gitee.com/gz-yami/mall4uni
 
 
-## uni-app相关截图
+## 商城演示地址
 
-![un-app总截图](./static/screenshot/uniappInfo.png)
+ 商业版商城小程序演示
 
-![un-app首页截图](./static/screenshot/uniappIndex.png)
-
-![un-app购物车截图](./static/screenshot/uniappCart.png)
-
-![un-app个人中心截图](./static/screenshot/uniappMy.png)
-
-![un-app商品sku截图](./static/screenshot/uniappSku.png)
+![输入图片说明](https://gitee.com/gz-yami/mall4j/raw/master/screenshot/%E5%AE%87%E5%AE%99%E7%89%88%E5%B0%8F%E7%A8%8B%E5%BA%8F.png)
 
 
 
-## 小程序相关截图
+​2. 搜索小程序 **mall4j商城** 可以获得多个版本的演示 
 
-![小程序截图](https://images.gitee.com/uploads/images/2019/0706/085234_4eb7509b_5094767.jpeg "小程序截图")
+
+## 相关截图
+
+![商城](https://images.gitee.com/uploads/images/2021/1110/145209_2ec1ad04_5094767.png "商城.png")
+
+
 
 
 
