@@ -52,13 +52,13 @@ Mall4j商城系统uniapp版本，做啥都不愁。即使不跨端，uni-app也�
 
 ## 项目链接
 
-java后台：https://gitee.com/gz-yami/mall4j
+java后台：[https://gitee.com/gz-yami/mall4j](https://gitee.com/gz-yami/mall4j)
 
-vue后台：https://gitee.com/gz-yami/mall4v
+vue后台前端：[https://gitee.com/gz-yami/mall4v](https://gitee.com/gz-yami/mall4v)
 
-原生微信小程序：https://gitee.com/gz-yami/mall4m
+小程序：[https://gitee.com/gz-yami/mall4m](https://gitee.com/gz-yami/mall4m)
 
-uniapp端：https://gitee.com/gz-yami/mall4uni
+uni-app：[https://gitee.com/gz-yami/mall4uni](https://gitee.com/gz-yami/mall4uni)
 
 
 ## 商城演示地址
@@ -81,18 +81,22 @@ uniapp端：https://gitee.com/gz-yami/mall4uni
 
 
 ## 提交反馈
-- Mall4j商城官网 https://www.mall4j.com
+- Mall4j商城官网 [https://www.mall4j.com](https://www.mall4j.com)
 
 
 - Mall4j商城官方技术QQ 1群：722835385（3000人群已满）
 - Mall4j商城官方技术QQ 2群：729888395
 - 如需购买商城商业版源码，请联系商务微信
 
-![输入图片说明](static/screenshot/%E5%95%86%E5%8A%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png)
+![输入图片说明](https://gitee.com/gz-yami/mall4j/raw/master/screenshot/%E5%95%86%E5%8A%A1%E4%BA%8C%E7%BB%B4%E7%A0%81.png)
 
 
 
 ## mall4cloud微服务商城版本已上线
-https://gitee.com/gz-yami/mall4cloud
+[https://gitee.com/gz-yami/mall4cloud](https://gitee.com/gz-yami/mall4cloud)
 
-## 更多信息请查看Mall4j商城官网 <https://www.mall4j.com>
+## 更多信息请查看Mall4j商城主项目
+[https://gitee.com/gz-yami/mall4j](https://gitee.com/gz-yami/mall4j)
+
+## Mall4j商城官网
+ [https://www.mall4j.com](https://www.mall4j.com)
