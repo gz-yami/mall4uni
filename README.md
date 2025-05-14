@@ -85,7 +85,8 @@ uni-app：[https://gitee.com/gz-yami/mall4uni](https://gitee.com/gz-yami/mall4un
 
 
 - Mall4j商城官方技术QQ 1群：722835385（3000人群已满）
-- Mall4j商城官方技术QQ 2群：729888395
+- Mall4j商城官方技术QQ 2群：729888395（2000人群已满）
+- Mall4j商城官方技术QQ 3群：630293864
 - 如需购买商城商业版源码，请联系商务微信
 
 ![输入图片说明](https://img.mall4j.com/contact.png-v)
